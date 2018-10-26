@@ -1,0 +1,40 @@
+### Sample request
+GET http://localhost:8080/hello/bk
+Accept: application/json
+
+### status
+### Case: Response 200 OK - Chaos Monkey is running.
+### Case: Response 503 Service Unavailable - Chaos Monkey is activated but will not launch any attacks.
+GET http://localhost:8080/actuator/chaosmonkey/status
+Content-Type: application/json
+
+###
+POST http://localhost:8080/actuator/chaosmonkey/enable
+Content-Type: application/json
+
+###
+POST http://localhost:8080/actuator/chaosmonkey/disable
+Content-Type: application/json
+
+###
+GET http://localhost:8080/actuator/chaosmonkey/watcher
+Accept: application/json
+
+###
+GET http://localhost:8080/actuator/chaosmonkey/assaults
+Accept: application/json
+
+###
+POST http://localhost:8080/actuator/chaosmonkey/assaults
+Content-Type: application/json
+
+{
+  "level": 1,
+  "latencyRangeStart": 2000,
+  "latencyRangeEnd": 5000,
+  "latencyActive": true,
+  "exceptionsActive": true,
+  "killApplicationActive": false
+}
+
+###

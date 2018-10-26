@@ -1,0 +1,17 @@
+chaos:
+  monkey:
+    enabled: true
+    assaults:
+      level: 5
+      latencyRangeStart: 1000
+      latencyRangeEnd: 10000
+      exceptionsActive: true
+      killApplicationActive: true
+      watchedCustomServices: bk.ko.chaospilot.fake.FakeRemoteService.getNameAndLength
+    watcher:
+      controller: false
+      restController: true
+      repository: false
+      service: false
+      component: false
+
